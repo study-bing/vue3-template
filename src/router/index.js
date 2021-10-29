@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+const modules = import.meta.globEager('../pages/**/router.js')
+let routeModuleList = []
+Object.keys(modules).forEach((key) => {
+    const mod = modules[key].default || {}
+    const modList = Array.isArray(mod) ? [...mod] : [mod]
+    routeModuleList.push(...modList)
+})
 // 获取路由信息
 // 动态加载pages中所有的路由文件
-const files = require.context('@/pages', true, /router\.js$/);
-const routes = files.keys().map(key => {
-  const page = require(`@/pages${ key.replace('.', '')}`);
-  return page.default;
-})
-
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+    history: createWebHistory(),
+    routes: routeModuleList,
 })
 
 export default router

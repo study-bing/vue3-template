@@ -11,17 +11,16 @@ import { useStore } from 'vuex'
 export default {
     name: 'login',
     components: {},
-    setup(props, content) {
-        console.log(props, content)
+    setup() {
         let msg = ref('this is login page')
         let store = useStore()
         store.commit('login/setInfo', { name: 'name' })
         let name = computed(() => store.getters['login/userInfo'].name)
         return {
             msg,
-            name
+            name,
         }
-    }
+    },
 }
 </script>
 
