@@ -1,23 +1,14 @@
 {
-  "name": "eslint-vite",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "axios": "^0.24.0",
-    "vue": "^3.2.16",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-vue": "^8.0.1",
-    "vite": "^2.6.4"
-  }
+    "name": "ct-saas",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "lerna exec --scope saas-view yarn dev",
+        "build": "lerna exec --scope saas-view yarn build",
+        "docs:dev": "lerna exec --scope saas-view yarn docs:dev",
+        "docs:build": "lerna exec --scope saas-view yarn docs:build"
+    },
+    "workspaces": [
+        "packages/*"
+    ]
 }

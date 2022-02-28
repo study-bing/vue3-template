@@ -3,7 +3,11 @@ module.exports = {
     env: {
         node: true,
     },
-    extends: ['plugin:vue/essential', 'eslint:recommended'],
+    extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier', '@vue/prettier'],
+    plugins: ['prettier'],
+    parserOptions: {
+        ecmaVersion: 2017,
+    },
     rules: {
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0, // allow debugger during development
         'arrow-parens': 0, // 箭头函数用小括号括起来
@@ -59,12 +63,15 @@ module.exports = {
         ],
         'vue/no-multiple-template-root': 'off',
     },
-    parserOptions: {
-        sourceType: 'module',
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
+    overrides: [
+        {
+            files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
+            env: {
+                mocha: true,
+            },
         },
+    ],
+    globals: {
+        defineProps: 'readonly',
     },
 }

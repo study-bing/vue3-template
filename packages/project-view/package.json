@@ -1,0 +1,46 @@
+{
+	"name": "saas-view",
+	"version": "0.0.0",
+	"description": "余杭ctSaas",
+	"keywords": [],
+	"author": "林斌 <linbin@ruhrtec.cn>",
+	"license": "ISC",
+	"main": "lib/saas-view.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:serve": "vitepress serve docs",
+		"register:components": "vitepress-rc"
+	},
+	"dependencies": {
+		"axios": "^0.26.0",
+		"element-plus": "^2.0.3",
+		"vue": "^3.2.25",
+		"vue-router": "^4.0.12",
+		"vuex": "^4.0.2"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^2.2.0",
+		"@vue/eslint-config-prettier": "^7.0.0",
+		"eslint": "^8.10.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-vue": "^8.5.0",
+		"lerna": "^4.0.0",
+		"prettier": "^2.5.1",
+		"unplugin-auto-import": "^0.6.1",
+		"unplugin-vue-components": "^0.17.21",
+		"vite": "^2.8.0",
+		"vitepress": "^0.22.3",
+		"vitepress-theme-demoblock": "^1.4.2"
+	}
+}
