@@ -1,10 +1,10 @@
 /*
  * @Author: linbin
  * @Date: 2022-02-26 15:24:40
- * @LastEditTime: 2022-02-26 15:40:23
+ * @LastEditTime: 2022-02-28 15:00:41
  * @LastEditors: linbin
  * @Description: 文档配置
- * @FilePath: /ct-saas/packages/saas-view/docs/.vitepress/config.js
+ * @FilePath: /vue3-template-vite/packages/project-view/docs/.vitepress/config.js
  */
 import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 
@@ -12,8 +12,8 @@ const sidebar = {
 	'/': [
 		{ text: '快速开始', link: '/' },
 		{
-			text: '通用',
-			children: [{ text: 'Input 输入框', link: '/components/obInput/' }]
+			text: '全局组件',
+			children: [{ text: 'Input 输入框', link: '/components/global/obInput/' }]
 		}
 	]
 }

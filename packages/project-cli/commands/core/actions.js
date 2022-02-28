@@ -1,7 +1,7 @@
 /*
  * @Author: linbin
  * @Date: 2021-10-08 15:25:26
- * @LastEditTime: 2022-02-28 14:38:41
+ * @LastEditTime: 2022-02-28 15:24:48
  * @LastEditors: linbin
  * @Description: 指令
  * @FilePath: /vue3-template-vite/packages/project-cli/commands/core/actions.js
@@ -26,15 +26,33 @@ const handleEjsToFile = async (name, dest, template, filename) => {
 	const targetPath = path.resolve(dest, filename)
 	writeFile(targetPath, result)
 }
-// 创建组件
-const addComponent = async (name, dest) => {
-	let src = path.resolve(__dirname, '../template/component.vue.ejs')
-	handleEjsToFile(name, dest, src, `${firstToUpper(name)}.vue`)
-}
 // 创建页面
 const addPage = async (name, dest) => {
-	// 选择yarn npm cnpm
-	addComponent(name, dest)
+    let src = path.resolve(__dirname, '../template/component.vue.ejs')
+	handleEjsToFile(name, dest, src, `${firstToUpper(name)}.vue`)
+}
+// 创建组件
+const addComponent = async (name, dest) => {
+    const promptList = [
+		{
+			type: 'confirm',
+			message: '是否全局组件:',
+			name: 'components',
+			default:true
+		}
+	]
+    let isGlobal = await inquirer.prompt(promptList)
+    let fileDest = `docs/components/${name.toLowerCase()}`
+    if(isGlobal.components){
+        // 添加index.js文件
+        dest = `${dest}/global/${name.toLowerCase()}`
+        fileDest  = `docs/components/global/${name.toLowerCase()}`
+    }else{
+        dest = `${dest}/${name.toLowerCase()}`
+    }
+	addPage(name, dest)
+    handleEjsToFile(name, dest, '../template/component.js.ejs', 'index.js')
+    handleEjsToFile(name, fileDest, '../template/component.md.ejs', 'index.md')
 }
 // 创建store
 const addStore = async (name, dest) => {

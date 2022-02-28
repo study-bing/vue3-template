@@ -1,0 +1,18 @@
+// 导入的组件必须在vue文件中声明 name, 否则组件无法注册使用
+import <%= data.name %> from './<%= data.name %>.vue'
+// 为组件提供 install 安装方法，供按需引入
+<%= data.name %>.install = app => {
+	app.component(<%= data.name %>.name, <%= data.name %>)
+}
+
+// 单独引入，为后面按需做基础
+export default {
+	title: '<%= data.name %>',
+	category: '',
+	status: '100%',
+	install(app) {
+		app.use(<%= data.name %>)
+	}
+}
+
+export { <%= data.name %> }
