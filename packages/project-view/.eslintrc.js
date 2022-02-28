@@ -1,12 +1,17 @@
 module.exports = {
     root: true,
     env: {
-        node: true,
+        node: true
     },
-    extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier', '@vue/prettier'],
+    extends: [
+        'plugin:vue/vue3-essential',
+        'eslint:recommended',
+        'prettier',
+        '@vue/prettier'
+    ],
     plugins: ['prettier'],
     parserOptions: {
-        ecmaVersion: 2017,
+        ecmaVersion: 2017
     },
     rules: {
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0, // allow debugger during development
@@ -18,8 +23,8 @@ module.exports = {
         camelcase: [
             'error',
             {
-                properties: 'never',
-            },
+                properties: 'never'
+            }
         ], //强制驼峰法命名
         eqeqeq: 'error', //  #使用带引号替代双引号
         'no-extend-native': 2, //禁止扩展native对象
@@ -28,8 +33,8 @@ module.exports = {
         'no-multiple-empty-lines': [
             1,
             {
-                max: 2,
-            },
+                max: 2
+            }
         ], //空行最多不能超过2行
         'no-native-reassign': 2, //不能重写native对象
         'no-trailing-spaces': 1, //一行结束后面不要有空格
@@ -38,8 +43,8 @@ module.exports = {
         'vue/no-parsing-error': [
             2,
             {
-                'x-invalid-end-tag': false,
-            },
+                'x-invalid-end-tag': false
+            }
         ],
         'no-dupe-keys': 2, //在创建对象字面量时不允许键重复 {a:1,a:1}
         'no-dupe-args': 2, //函数参数不能重复
@@ -51,27 +56,31 @@ module.exports = {
             'error',
             {
                 singleline: 'never', //.单行元素的配置禁止在右括号前换行
-                multiline: 'always', //多行元素的配置要求在右方括号前换行。
-            },
+                multiline: 'always' //多行元素的配置要求在右方括号前换行。
+            }
         ],
         'no-var': 'error', //不得申明var用let
         'vue/html-closing-bracket-spacing': [
             'error',
             {
-                startTag: 'never',
-            },
+                startTag: 'never'
+            }
         ],
         'vue/no-multiple-template-root': 'off',
+        'vue/multi-word-component-names': 0
     },
     overrides: [
         {
-            files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
+            files: [
+                '**/__tests__/*.{j,t}s?(x)',
+                '**/tests/unit/**/*.spec.{j,t}s?(x)'
+            ],
             env: {
-                mocha: true,
-            },
-        },
+                mocha: true
+            }
+        }
     ],
     globals: {
-        defineProps: 'readonly',
-    },
-}
+        defineProps: 'readonly'
+    }
+};
