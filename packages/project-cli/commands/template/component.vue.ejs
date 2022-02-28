@@ -1,0 +1,20 @@
+<template>
+    <div class="<%= data.lowerName %>">
+        <h1>{{ msg }} Page</h1>
+    </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+export default {
+    name: '<%= data.name %>',
+    let msg = ref('this is <%= data.lowerName %> page')
+}
+</script>
+
+<style lang="less" scoped>
+    .<%= data.lowerName %> {
+    
+}
+</style>
+

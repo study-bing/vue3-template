@@ -6,7 +6,8 @@
 		"dev": "lerna exec --scope project-view yarn dev",
 		"build": "lerna exec --scope project-view yarn build",
 		"docs:dev": "lerna exec --scope project-view yarn docs:dev",
-		"docs:build": "lerna exec --scope project-view yarn docs:build"
+		"docs:build": "lerna exec --scope project-view yarn docs:build",
+		"link": "lerna exec --scope project-cli yarn link"
 	},
 	"workspaces": [
 		"packages/*"

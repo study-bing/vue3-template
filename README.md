@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+## 介绍
+1.该项目由 vue + vite创建的项目和自定义脚手架组成
+2.由lerna管理脚手架和项目
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 执行
+1.执行`lerna bootstrap`安装依赖
+2.执行`npm link`添加脚手架软连接
+3.执行`npm run dev`运行项目
+4.执行`npm run docs:dev`运行文档项目
