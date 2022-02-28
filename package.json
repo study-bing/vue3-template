@@ -10,5 +10,23 @@
     },
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "devDependencies": {
+        "husky": "^7.0.4"
+    },
+    "dependencies": {
+        "lint-staged": "^12.3.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "packages/**/src/**/*.{js,vue}": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ]
+    }
 }

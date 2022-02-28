@@ -1,7 +1,5 @@
 <template>
-    <div class="home">
-        <h1>{{ msg }} Page</h1>
-    </div>
+    <h1>{{ msg }} Page</h1>
 </template>
 
 <script>
@@ -12,9 +10,9 @@ export default {
     setup() {
         let msg = ref('this is home page')
         return {
-            msg
+            msg,
         }
-    }
+    },
 }
 </script>
 
