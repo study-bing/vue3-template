@@ -7,7 +7,8 @@
         "build": "lerna exec --scope saas-view yarn build",
         "docs:dev": "lerna exec --scope saas-view yarn docs:dev",
         "docs:build": "lerna exec --scope saas-view yarn docs:build",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "precommit": "lint-staged"
     },
     "workspaces": [
         "packages/*"
