@@ -6,7 +6,8 @@
         "dev": "lerna exec --scope saas-view yarn dev",
         "build": "lerna exec --scope saas-view yarn build",
         "docs:dev": "lerna exec --scope saas-view yarn docs:dev",
-        "docs:build": "lerna exec --scope saas-view yarn docs:build"
+        "docs:build": "lerna exec --scope saas-view yarn docs:build",
+        "prepare": "husky install"
     },
     "workspaces": [
         "packages/*"
@@ -16,11 +17,6 @@
     },
     "dependencies": {
         "lint-staged": "^12.3.4"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
     },
     "lint-staged": {
         "packages/**/src/**/*.{js,vue}": [
