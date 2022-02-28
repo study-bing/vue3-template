@@ -3,17 +3,17 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from 'vue'
 export default {
     name: 'Home',
     components: {},
     setup() {
-        let msg = ref('this is home page');
+        let msg = ref('this is home page')
         return {
-            msg
-        };
-    }
-};
+            msg,
+        }
+    },
+}
 </script>
 
 <style lang="less" scoped></style>

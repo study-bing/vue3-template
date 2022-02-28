@@ -1,29 +1,14 @@
 {
-    "name": "ct-saas",
-    "private": true,
-    "version": "0.0.0",
-    "scripts": {
-        "dev": "lerna exec --scope saas-view yarn dev",
-        "build": "lerna exec --scope saas-view yarn build",
-        "docs:dev": "lerna exec --scope saas-view yarn docs:dev",
-        "docs:build": "lerna exec --scope saas-view yarn docs:build",
-        "prepare": "husky install",
-        "precommit": "lint-staged"
-    },
-    "workspaces": [
-        "packages/*"
-    ],
-    "devDependencies": {
-        "husky": "^7.0.4"
-    },
-    "dependencies": {
-        "lint-staged": "^12.3.4"
-    },
-    "lint-staged": {
-        "packages/**/src/**/*.{js,vue}": [
-            "prettier --write",
-            "eslint --fix",
-            "git add"
-        ]
-    }
+	"name": "ct-saas",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "lerna exec --scope project-view yarn dev",
+		"build": "lerna exec --scope project-view yarn build",
+		"docs:dev": "lerna exec --scope project-view yarn docs:dev",
+		"docs:build": "lerna exec --scope project-view yarn docs:build"
+	},
+	"workspaces": [
+		"packages/*"
+	]
 }
