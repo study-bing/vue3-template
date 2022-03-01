@@ -1,14 +1,9 @@
 <template>
     <div class="<%= data.lowerName %>">
-        <h1>{{ msg }} Components</h1>
+        <h1>{{ msg }} Page</h1>
     </div>
 </template>
 
-<script>
-export default {
-    name: '<%= data.lowerName %>',
-}
-</script>
 <script setup>
 import { ref } from 'vue'
     let msg = ref('this is <%= data.lowerName %> page')

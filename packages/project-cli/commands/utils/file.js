@@ -1,8 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const ejs = require('ejs')
-const validateProjectName = require('validate-npm-package-name')
-const chalk = require('chalk');
 
 const log = require('./log')
 // ejs编译
@@ -40,11 +38,15 @@ const mkdirSync = (dirname) => {
 }
 // 首字母转大写
 function firstToUpper(str) {
-    return str.trim().toLowerCase().replace(str[0], str[0].toUpperCase());
+    return str.trim().replace(str[0], str[0].toUpperCase());
+}
+function firstToLower(str) {
+    return str.trim().replace(str[0], str[0].toLowerCase());
 }
 module.exports = {
     ejsCompile,
     writeFile,
     mkdirSync,
-    firstToUpper
+    firstToUpper,
+    firstToLower
 }

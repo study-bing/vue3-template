@@ -21,15 +21,18 @@
 		"cli:dev": "esbuild --bundle ./index.js --format=cjs --platform=node --outdir=./commands --watch",
 		"cli:build": "esbuild --bundle ./index.js --format=cjs --platform=node --outdir=./commands",
 		"cli:addPage": "node ./commands/index.js addPage",
-        "link": "npm link"
+		"link": "npm link"
 	},
 	"bugs": {
 		"url": "https://github.com/study-bing/vue3-template/issues"
 	},
 	"homepage": "https://github.com/study-bing/vue3-template#readme",
 	"dependencies": {
+		"chalk": "^4.1.2",
+		"commander": "^9.0.0",
 		"ejs": "^3.1.6",
-		"esbuild": "^0.14.23"
+		"esbuild": "^0.14.23",
+		"fs-extra": "^10.0.1"
 	},
 	"bin": {
 		"lCli": "index.js"

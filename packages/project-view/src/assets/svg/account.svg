@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>account</title>
+    <desc>Created with Sketch.</desc>
+    <g id="v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="登录页" transform="translate(-1381.000000, -506.000000)">
+            <g id="编组-8" transform="translate(1180.000000, -1.000000)">
+                <g id="编组-3" transform="translate(179.242219, 335.000000)">
+                    <g id="编组-2" transform="translate(0.000000, 157.000000)">
+                        <g id="编组-6" transform="translate(0.757781, 0.000000)">
+                            <g id="编组" transform="translate(21.028417, 15.000000)">
+                                <g id="编组-4">
+                                    <rect id="系统管理" stroke="#8896AD" stroke-width="1.2" x="2.40324763" y="3.6" width="16.8227334" height="12" rx="2.4"></rect>
+                                    <rect id="矩形" fill="#8896AD" x="2.40324763" y="18" width="16.8227334" height="1.2" rx="0.6"></rect>
+                                    <rect id="矩形备份" fill="#8896AD" x="6.00811908" y="9" width="9.61299053" height="1.2" rx="0.6"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,7 @@
 /*
  * @Author: linbin
  * @Date: 2021-10-08 15:25:26
- * @LastEditTime: 2022-02-28 15:24:48
+ * @LastEditTime: 2022-03-01 11:29:56
  * @LastEditors: linbin
  * @Description: 指令
  * @FilePath: /vue3-template-vite/packages/project-cli/commands/core/actions.js
@@ -10,7 +10,7 @@
 const { promisify } = require('util')
 const path = require('path')
 const inquirer = require('inquirer')
-const { ejsCompile, writeFile, mkdirSync, firstToUpper } = require('../utils/file')
+const { ejsCompile, writeFile, mkdirSync, firstToUpper, firstToLower } = require('../utils/file')
 const log = require('../utils/log')
 const handleEjsToFile = async (name, dest, template, filename) => {
 	// validateName(name)
@@ -18,7 +18,7 @@ const handleEjsToFile = async (name, dest, template, filename) => {
 	const templatePath = path.resolve(__dirname, template)
 	const result = await ejsCompile(templatePath, {
 		name,
-		lowerName: name.toLowerCase()
+		lowerName: firstToLower(name)
 	})
 	// 2.写入文件中
 	// 判断文件不存在,那么就创建文件
@@ -28,7 +28,7 @@ const handleEjsToFile = async (name, dest, template, filename) => {
 }
 // 创建页面
 const addPage = async (name, dest) => {
-    let src = path.resolve(__dirname, '../template/component.vue.ejs')
+    let src = path.resolve(__dirname, '../template/page.vue.ejs')
 	handleEjsToFile(name, dest, src, `${firstToUpper(name)}.vue`)
 }
 // 创建组件
@@ -50,7 +50,8 @@ const addComponent = async (name, dest) => {
     }else{
         dest = `${dest}/${name.toLowerCase()}`
     }
-	addPage(name, dest)
+    let src = path.resolve(__dirname, '../template/component.vue.ejs')
+    handleEjsToFile(name, dest, src, `${firstToUpper(name)}.vue`)
     handleEjsToFile(name, dest, '../template/component.js.ejs', 'index.js')
     handleEjsToFile(name, fileDest, '../template/component.md.ejs', 'index.md')
 }
