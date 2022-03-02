@@ -4,7 +4,9 @@
 
 ```vue
 <template>
+<div width="100%" style="overflow-x: auto;"> 
     <SvgIcon name="account" />
+    </div>
 </template>
 ```
 :::
