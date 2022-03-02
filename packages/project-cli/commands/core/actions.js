@@ -1,7 +1,7 @@
 /*
  * @Author: linbin
  * @Date: 2021-10-08 15:25:26
- * @LastEditTime: 2022-03-01 11:29:56
+ * @LastEditTime: 2022-03-02 09:39:44
  * @LastEditors: linbin
  * @Description: 指令
  * @FilePath: /vue3-template-vite/packages/project-cli/commands/core/actions.js
@@ -17,7 +17,7 @@ const handleEjsToFile = async (name, dest, template, filename) => {
 	// 1.获取模块引擎的路径
 	const templatePath = path.resolve(__dirname, template)
 	const result = await ejsCompile(templatePath, {
-		name,
+		name: firstToUpper(name),
 		lowerName: firstToLower(name)
 	})
 	// 2.写入文件中
@@ -42,13 +42,13 @@ const addComponent = async (name, dest) => {
 		}
 	]
     let isGlobal = await inquirer.prompt(promptList)
-    let fileDest = `docs/components/${name.toLowerCase()}`
+    let fileDest = `docs/components/${firstToLower(name)}`
     if(isGlobal.components){
         // 添加index.js文件
-        dest = `${dest}/global/${name.toLowerCase()}`
-        fileDest  = `docs/components/global/${name.toLowerCase()}`
+        dest = `${dest}/global/${firstToLower(name)}`
+        fileDest  = `docs/components/global/${firstToLower(name)}`
     }else{
-        dest = `${dest}/${name.toLowerCase()}`
+        dest = `${dest}/${firstToLower(name)}`
     }
     let src = path.resolve(__dirname, '../template/component.vue.ejs')
     handleEjsToFile(name, dest, src, `${firstToUpper(name)}.vue`)
